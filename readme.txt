@@ -1,7 +1,3 @@
- ![Illustration du projet : barre d'XP dans Notion](images/Capture barre d'XP.jpg)
-
-## ✨ Barre de progression XP
-
 Formule Notion qui affiche l'XP gagné dans le niveau en cours, le palier à atteindre et une barre de progression visuelle. Les niveaux suivent une courbe progressive : plus on monte, plus chaque palier demande d'XP.
 
 ### Rendu
