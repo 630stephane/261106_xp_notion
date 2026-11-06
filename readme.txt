@@ -17,7 +17,7 @@ Niveau = `floor(sqrt(raw_xp / 200)) + 1`
 
 | Niveau | XP total requis | XP à gagner pour ce palier |
 |---|---|---|
-| 1 | 0 | 200 |
+| 1 | 0 | 300 |
 | 2 | 200 | 600 |
 | 3 | 800 | 1 000 |
 | 4 | 1 800 | 1 400 |
@@ -36,7 +36,10 @@ Chaque niveau demande 400 XP de plus que le précédent.
 
 ```
 lets(
-  palier, 200 * (2 * raw_level - 1),
-  xp, raw_xp - 200 * pow(raw_level - 1, 2),
-  pct, min(xp /
-
+  k, 300,
+  palier, k * (2 * prop("raw_level") - 1),
+  xp, prop("raw_xp") - k * pow(prop("raw_level")- 1, 2),
+  pct, min(xp / palier, 1),
+  filled, floor(pct * 10),
+  "✨ XP: " + format(xp) + " / " + format(palier) + "\n" + "▰".repeat(filled) + "▱".repeat(10 - filled) + " " + format(round(pct * 100)) + " %"
+)
